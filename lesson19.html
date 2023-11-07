@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>calc</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="offset-2 col-8 mt-5">
+                <div class="card">
+                    <div class="card-header text-success h1">
+                        Calculator
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group my-4">
+                            <label for="number1" class="form-label">Enter number 1</label>
+                            <input type="number" class="form-control" name="number1" placeholder="Enter value of number1"
+                                id="number1">
+                        </div>
+                        <div class="form-group my-4">
+                            <label for="number2" class="form-label">Enter number 2</label>
+                            <input type="number" class="form-control" name="number2" placeholder="Enter value of number2"
+                                id="number2">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="text" name="answer" readonly class="form-control" placeholder="Answer Goes here"
+                                id="answer">
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-3 d-grid">
+                                <button class="btn btn-success" onclick="getAdd()">Addition</button>
+                            </div>
+                            <div class="col-3 d-grid">
+                                <button class="btn btn-success" onclick="getsub()">Subtraction</button>
+                            </div>
+                            <div class="col-3 d-grid">
+                                <button class="btn btn-success" onclick="getmulti()">Multiplication</button>
+                            </div>
+                            <div class="col-3 d-grid">
+                                <button class="btn btn-success" onclick="getdivi()">Division</button>
+                            </div>
+                            <div class="col-3 d-grid mt-3">
+                                <button class="btn btn-success" onclick="getmax()">Maximum</button>
+                            </div>
+                            <div class="col-3 d-grid mt-3">
+                                <button class="btn btn-success" onclick="getmin()">Minimum</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function getAdd() {
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+            console.log("The value of number 1 is " + number1 + " the value of number 2 is " + number2);
+            document.getElementById("answer").value = number1 + number2;
+        }
+
+        function getsub() {
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+            console.log("The value of number 1 is " + number1 + " the value of number 2 is " + number2);
+            document.getElementById("answer").value = number1 - number2;
+        }
+
+        function getmulti() {
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+            console.log("The value of number 1 is " + number1 + " the value of number 2 is " + number2);
+            document.getElementById("answer").value = number1 * number2;
+        }
+
+        function getdivi() {
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+            console.log("The value of number 1 is " + number1 + " the value of number 2 is " + number2);
+            document.getElementById("answer").value = number1 / number2;
+        }
+
+        function getmax() {
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+            if (number1 > number2) {
+                console.log("number 1 is greater");
+                document.getElementById("answer").value = "Number one is greater";
+            } else if (number2 > number1) {
+                console.log("number 2 is greater");
+                document.getElementById("answer").value = "Number two is greater";
+            } else {
+                console.log("Both numbers are equal");
+                document.getElementById("answer").value = "Both numbers are equal";
+            }
+        }
+
+        function getmin() {
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+            if (number1 < number2) {
+                console.log("number 1 is smaller");
+                document.getElementById("answer").value = "Number one is smaller";
+            } else if (number2 < number1) {
+                console.log("number 2 is smaller");
+                document.getElementById("answer").value = "Number two is smaller";
+            } else {
+                console.log("Both numbers are equal");
+                document.getElementById("answer").value = "Both numbers are equal";
+            }
+        }
+    </script>
+</body>
+</html>
